@@ -1,23 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import { Canvas } from 'react-three-fiber';
+import NoiseEffect from './mouseeffect';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <section className='App-header'>
+        <Canvas>
+          <NoiseEffect posotion={[-1.2,0,0]}/>
+          {/* <Cylinder3d posotion={[1.2,0,0]}/> */}
+          <pointLight position={[10, 10, 10]} />
+          <ambientLight />
+        </Canvas>
+
+      </section>
     </div>
   );
 }
